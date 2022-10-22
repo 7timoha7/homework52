@@ -10,25 +10,23 @@ interface CardViewProps {
 // const card = new Card('clubs', '2');
 
 const CardView: React.FC<CardViewProps> = props => {
-
-  let t: string = '';
-
+  let suit: string = '';
   switch (props.suit) {
     case '♦':
-      t = 'diams'
+      suit = 'diams'
       break;
     case '♥':
-      t = 'hearts'
+      suit = 'hearts'
       break;
     case '♣':
-      t = 'clubs'
+      suit = 'clubs'
       break;
     case '♠':
-      t = 'spades'
+      suit = 'spades'
       break;
   }
 
-  const cardClass = 'card rank-' + (props.rank.toLowerCase()) + ' ' + t;
+  const cardClass = 'card rank-' + (props.rank.toLowerCase()) + ' ' + suit;
   return (
     <div className="playingCards faceImages">
         <span className={cardClass}>
