@@ -1,28 +1,31 @@
 import Card from "./Card";
 
-type CardX = {
-  rank: string,
-  suit: string
-}
-
-
 class CardDeck {
-  public massDeck: CardX[] = [];
-  public oneCard: CardX = {rank: 'default', suit: 'default'};
-  public cardDenomination: string[] = [];
-  public cardSuit: string[] = [];
+  public massDeck: Card[] = [];
 
-  constructor() {
-    this.cardDenomination = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-    this.cardSuit = ['diams', 'hearts', 'clubs', 'spades'];
+  constructor(
+    public cardDenomination = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'],
+    public cardSuit = ['diams', 'hearts', 'clubs', 'spades']
+  ) {
+    for (let i = 0; i < cardSuit.length; i++) {
+      for (let r = 0; r < cardDenomination.length; r++) {
+        this.massDeck.push(new Card(cardSuit[i], cardDenomination[r]));
+      }
+    }
+  }
 
-    this.cardDenomination.forEach(rank => {
-      this.cardSuit.forEach(suit => {
-        this.oneCard.rank = rank;
-        this.oneCard.suit = suit;
-        this.massDeck.push(this.oneCard);
-      })
-    })
+  getCard() {
+    // console.log(this.massDeck);
+    let randomNumber = Math.floor(Math.random() * (52 + 1));
+    return this.massDeck.splice(randomNumber, 1);
+  }
+
+  getCards(howMany: number) {
+    const getCards = [];
+    for (let i = 0; i < howMany; i++) {
+          getCards.push(this.getCard())
+    }
+    return getCards
   }
 
 
