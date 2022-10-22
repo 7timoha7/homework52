@@ -1,7 +1,6 @@
 import React from "react";
 
 
-
 interface CardViewProps {
   rank: string
   suit: string
@@ -14,10 +13,10 @@ const CardView: React.FC<CardViewProps> = props => {
 
   let t: string = '';
 
-  switch (props.suit){
+  switch (props.suit) {
     case '♦':
       t = 'diams'
-    break;
+      break;
     case '♥':
       t = 'hearts'
       break;
@@ -27,8 +26,6 @@ const CardView: React.FC<CardViewProps> = props => {
     case '♠':
       t = 'spades'
       break;
-
-
   }
 
   const cardClass = 'card rank-' + (props.rank.toLowerCase()) + ' ' + t;
