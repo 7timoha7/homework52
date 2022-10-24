@@ -16,19 +16,18 @@ class CardDeck {
 
   getCard() {
     // console.log(this.massDeck);
-    let randomNumber = Math.floor(Math.random() * (52 + 1));
-    return this.massDeck.splice(randomNumber, 1);
+    const random = Math.floor(Math.random() * (this.massDeck.length));
+    return this.massDeck.splice(random, 1)[0];
+
   }
 
   getCards(howMany: number) {
     const getCards = [];
     for (let i = 0; i < howMany; i++) {
-          getCards.push(this.getCard())
+      getCards.push(this.getCard())
     }
     return getCards
   }
-
-
 }
 
 export default CardDeck

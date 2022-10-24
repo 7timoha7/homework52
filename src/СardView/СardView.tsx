@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../cards.css';
 
 interface CardViewProps {
   rank: string
@@ -12,26 +12,28 @@ interface CardViewProps {
 const CardView: React.FC<CardViewProps> = props => {
   let suit: string = '';
   switch (props.suit) {
-    case '♦':
-      suit = 'diams'
+    case 'diams':
+      suit = '♦'
       break;
-    case '♥':
-      suit = 'hearts'
+    case 'hearts':
+      suit = '♥'
       break;
-    case '♣':
-      suit = 'clubs'
+    case 'clubs':
+      suit = '♣'
       break;
-    case '♠':
-      suit = 'spades'
+    case 'spades':
+      suit = '♠'
       break;
+    default :
+      break
   }
 
-  const cardClass = 'card rank-' + (props.rank.toLowerCase()) + ' ' + suit;
+  const cardClass = 'card rank-' + (props.rank.toLowerCase()) + ' ' + props.suit;
   return (
     <div className="playingCards faceImages">
         <span className={cardClass}>
           <span className="rank">{props.rank}</span>
-          <span className="suit">{props.suit}</span>
+          <span className="suit">{suit}</span>
         </span>
     </div>
   )
