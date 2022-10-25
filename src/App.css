@@ -1,3 +1,46 @@
-.box{
+.box {
     display: flex;
+    padding: 50px;
+    background: rgba(102, 102, 102, 0.7);
+    border-radius: 25px;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+body {
+
+    background-image: url("https://i.7fon.org/1000/l123338.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 50px;
+}
+
+.btn {
+    height: 100px;
+    width: 150px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    border: none;
+    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(0, 255, 154));
+}
+
+.btn:active {
+    box-shadow: 4px 4px 50px 10px rgba(143, 180, 163, 0.7);
+}
+
+.combination {
+    padding: 20px;
+    background: rgba(102, 102, 102, 0.7);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 40px;
+    color: white;
 }

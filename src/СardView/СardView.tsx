@@ -6,9 +6,6 @@ interface CardViewProps {
   suit: string
 }
 
-
-// const card = new Card('clubs', '2');
-
 const CardView: React.FC<CardViewProps> = props => {
   let suit: string = '';
   switch (props.suit) {
