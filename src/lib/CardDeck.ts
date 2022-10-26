@@ -1,11 +1,14 @@
 import Card from "./Card";
 
+
+
 class CardDeck {
   public massDeck: Card[] = [];
 
+
   constructor(
     public cardDenomination = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'],
-    public cardSuit = ['diams', 'hearts', 'clubs', 'spades']
+    public cardSuit = ['diams', 'hearts', 'clubs', 'spades'],
   ) {
     for (let i = 0; i < cardSuit.length; i++) {
       for (let r = 0; r < cardDenomination.length; r++) {
@@ -27,8 +30,10 @@ class CardDeck {
   getCards(howMany: number) {
     const getCards = [];
     for (let i = 0; i < howMany; i++) {
-      getCards.push(this.getCard())
+      getCards.push(this.getCard());
     }
+
+
 
     // const getCards = [];
     // for (let i = 0; i < this.massDeck.length; i++) {

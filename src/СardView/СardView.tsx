@@ -1,9 +1,8 @@
-import React from "react";
 import '../cards.css';
 
 interface CardViewProps {
-  rank: string
-  suit: string
+  rank: string;
+  suit: string;
 }
 
 const CardView: React.FC<CardViewProps> = props => {
@@ -22,16 +21,28 @@ const CardView: React.FC<CardViewProps> = props => {
       suit = '♠'
       break;
     default :
-      break
+      break;
   }
+
+  // const replace = () => {
+  //   const newDeck = new cardDeck();
+  //   console.log(newDeck.massDeck);
+  //   newDeck.getCard()
+  //   console.log(newDeck.getCard());
+  //   // const ref = useRef(card)
+  // }
 
   const cardClass = 'card rank-' + (props.rank.toLowerCase()) + ' ' + props.suit;
   return (
-    <div className="playingCards faceImages">
+
+    <div className='card_box'>
+      <div className="playingCards faceImages">
         <span className={cardClass}>
           <span className="rank">{props.rank}</span>
           <span className="suit">{suit}</span>
         </span>
+      </div>
+      {/*<button className='btn_replace' onClick={replace}>Replace</button>*/}
     </div>
   )
 }

@@ -1,27 +1,24 @@
 import Card from "./Card";
 
-
 class PokerHand {
   constructor(public fiveCard: Card[]) {
   }
 
   getOutcome() {
     const cards = this.fiveCard;
-    console.log(cards);
     const numbersCard: Card[] = [];
 
     for (let i = 0; i < cards.length; i++) {
-
       if (cards[i].rank === 'J') {
-        numbersCard.push(new Card(cards[i].suit, '11'))
+        numbersCard.push(new Card(cards[i].suit, '11'));
       } else if (cards[i].rank === 'Q') {
-        numbersCard.push(new Card(cards[i].suit, '12'))
+        numbersCard.push(new Card(cards[i].suit, '12'));
       } else if (cards[i].rank === 'K') {
-        numbersCard.push(new Card(cards[i].suit, '13'))
+        numbersCard.push(new Card(cards[i].suit, '13'));
       } else if (cards[i].rank === 'A') {
-        numbersCard.push(new Card(cards[i].suit, '14'))
+        numbersCard.push(new Card(cards[i].suit, '14'));
       } else {
-        numbersCard.push(new Card(cards[i].suit, cards[i].rank))
+        numbersCard.push(new Card(cards[i].suit, cards[i].rank));
       }
     }
 
@@ -29,15 +26,16 @@ class PokerHand {
     for (let i = 0; i < cards.length; i++) {
       for (let j = 0; j < cards.length; j++) {
         if (cards[i].rank === cards[j].rank && cards[i].suit !== cards[j].suit) {
-          multipleCards++
+          multipleCards++;
         }
       }
     }
+
     let flush = 0;
     for (let i = 0; i < cards.length; i++) {
       for (let j = 0; j < cards.length; j++) {
         if (cards[i].suit === cards[j].suit && cards[i].rank !== cards[j].rank) {
-          flush++
+          flush++;
         }
       }
     }
@@ -52,10 +50,10 @@ class PokerHand {
     });
 
     if (
-      ((straight[1] - straight[0]) === 1 &&
-        (straight[2] - straight[1]) === 1 &&
-        (straight[3] - straight[2]) === 1 &&
-        (straight[4] - straight[3]) === 1) &&
+      ((straight[1] + straight[0]) === 21 &&
+        (straight[2] + straight[1]) === 23 &&
+        (straight[3] + straight[2]) === 25 &&
+        (straight[4] + straight[3]) === 27) &&
       (cards[0].suit === cards[1].suit &&
         cards[1].suit === cards[2].suit &&
         cards[2].suit === cards[3].suit &&
@@ -91,17 +89,16 @@ class PokerHand {
         (straight[3] - straight[2]) === 1)
     ) {
       return 'Straight';
-    } else if (multipleCards === 2) {
-      return 'One pair';
-    } else if (multipleCards === 4) {
-      return 'Two pairs';
     } else if (multipleCards === 6) {
       return 'Three of a kind';
+    } else if (multipleCards === 4) {
+      return 'Two pairs';
+    } else if (multipleCards === 2) {
+      return 'One pair';
     } else {
       return 'Senior card';
     }
   }
 }
-
 
 export default PokerHand;
