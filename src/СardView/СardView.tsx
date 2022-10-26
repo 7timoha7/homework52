@@ -24,14 +24,6 @@ const CardView: React.FC<CardViewProps> = props => {
       break;
   }
 
-  // const replace = () => {
-  //   const newDeck = new cardDeck();
-  //   console.log(newDeck.massDeck);
-  //   newDeck.getCard()
-  //   console.log(newDeck.getCard());
-  //   // const ref = useRef(card)
-  // }
-
   const cardClass = 'card rank-' + (props.rank.toLowerCase()) + ' ' + props.suit;
   return (
 
@@ -42,7 +34,6 @@ const CardView: React.FC<CardViewProps> = props => {
           <span className="suit">{suit}</span>
         </span>
       </div>
-      {/*<button className='btn_replace' onClick={replace}>Replace</button>*/}
     </div>
   )
 }

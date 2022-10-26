@@ -6,8 +6,6 @@ import Card from "./lib/Card";
 import PokerHand from "./lib/PokerHand";
 import Combination from "./Combination/Combination";
 
-
-
 function App() {
 
   const [card, setCard] = useState<Card[]>([]);
@@ -68,23 +66,23 @@ function App() {
       <div className="App">
         <button className='btn' onClick={dealCards}>Deal cards</button>
         <div className='box'>
-          <div>
+          <div className='card_box'>
             <CardView rank={card[0].rank} suit={card[0].suit}/>
             <button className='btn_replace' onClick={() => replaceCard(0)} >Replace</button>
           </div>
-          <div>
+          <div className='card_box'>
             <CardView rank={card[1].rank} suit={card[1].suit}/>
             <button className='btn_replace' onClick={() => replaceCard(1)} >Replace</button>
           </div>
-          <div>
+          <div className='card_box'>
             <CardView rank={card[2].rank} suit={card[2].suit}/>
             <button className='btn_replace' onClick={() => replaceCard(2)} >Replace</button>
           </div>
-          <div>
+          <div className='card_box'>
             <CardView rank={card[3].rank} suit={card[3].suit}/>
             <button className='btn_replace' onClick={() => replaceCard(3)} >Replace</button>
           </div>
-          <div>
+          <div className='card_box'>
             <CardView rank={card[4].rank} suit={card[4].suit}/>
             <button className='btn_replace' onClick={() => replaceCard(4)} >Replace</button>
           </div>
