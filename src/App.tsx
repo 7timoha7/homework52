@@ -35,7 +35,6 @@ function App() {
 
     const random = Math.floor(Math.random() * (ref.current.length));
     const oneCard = ref.current.splice(random, 1);
-    console.log(oneCard);
     const fiveCard:Card[] = [...card];
     fiveCard.splice(number, 1, oneCard[0]);
     setCard(fiveCard);
