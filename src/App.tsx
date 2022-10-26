@@ -57,6 +57,12 @@ function App() {
         <button className='btn' onClick={dealCards}>Deal cards</button>
       </div>
     );
+  }else if (ref.current.length === 0){
+    return (
+      <div className="App">
+        <button className='btn' onClick={dealCards}>Deal cards</button>
+      </div>
+    );
   } else {
     return (
       <div className="App">
